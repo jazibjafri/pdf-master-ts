@@ -18,7 +18,7 @@ PDF.
 To use PDF master in your project, run:
 
 ```bash
-  npm install pdf-master
+  npm install pdf-master-ts
 ```
 
 ## How to Use
@@ -27,7 +27,7 @@ To use PDF master in your project, run:
 
 ```js
 const express = require("express");
-const pdfMaster = require("pdf-master");
+const pdfMaster = require("pdf-master-ts");
 
 const app = express();
 
@@ -66,7 +66,7 @@ generatePdf(
 
 ```js
 const express = require("express");
-const pdfMaster = require("pdf-master");
+const pdfMaster = require("pdf-master-ts");
 
 const app = express();
 
