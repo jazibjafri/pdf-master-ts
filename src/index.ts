@@ -37,3 +37,5 @@ export async function generatePdf(
   });
   return PDF!;
 }
+
+export default { generatePdf };

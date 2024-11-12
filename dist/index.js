@@ -50,3 +50,4 @@ function generatePdf(htmlTemplatePath_1) {
         return PDF;
     });
 }
+exports.default = { generatePdf };

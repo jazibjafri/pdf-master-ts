@@ -1,6 +1,6 @@
 {
   "name": "pdf-master-ts",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "\"npm package to generate static and dynamic PDFs in nodejs.\"",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
