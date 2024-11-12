@@ -1,14 +1,20 @@
 {
-  "name": "pdf-master",
-  "version": "1.1.0",
-  "description": "\"npm package to generate static and dynamic PDF in nodejs.\"",
-  "main": "src/index.js",
+  "name": "pdf-master-ts",
+  "version": "1.0.0",
+  "description": "\"npm package to generate static and dynamic PDFs in nodejs.\"",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
   "scripts": {
+    "build": "tsc",
+    "prepublishOnly": "npm run build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/chaitanyamogal/pdf-master"
+    "url": "git@github.com:jazibjafri/pdf-master-ts.git"
   },
   "keywords": [
     "pdf",
@@ -22,14 +28,26 @@
     "generate pdf",
     "create pdf"
   ],
-  "author": "chaitanya mogal <chaitanyamogal@gmail.com>",
+  "author": "jazibjafri",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/chaitanyamogal/pdf-master/issues"
+    "url": "https://github.com/jazibjafri/pdf-master-ts/issues"
   },
-  "homepage": "https://github.com/chaitanyamogal/pdf-master",
+  "homepage": "https://github.com/jazibjafri/pdf-master-ts",
   "dependencies": {
     "handlebars": "^4.7.7",
     "puppeteer": "^19.4.1"
+  },
+  "engines": {
+    "npm": "10.x.x",
+    "node": ">= 20.12.2",
+    "yarn": "3.8.5"
+  },
+  "volta": {
+    "node": "20.12.2",
+    "yarn": "3.8.5"
+  },
+  "devDependencies": {
+    "typescript": "^5.6.3"
   }
 }

@@ -1,12 +1,13 @@
-const fs = require("fs");
-const path = require("path");
-const utils = require("util");
-const puppeteer = require("puppeteer");
-const hb = require("handlebars");
+import fs from "fs";
+import path from "path";
+import utils from "util";
+import puppeteer, { PDFOptions } from "puppeteer";
+import hb from "handlebars";
+
 const readFile = utils.promisify(fs.readFile);
 
 // Loading HTML template
-async function getTemplateHtml(htmlTemplatePath) {
+async function getTemplateHtml(htmlTemplatePath: string) {
   let templatePath;
   try {
     templatePath = path.resolve(htmlTemplatePath);
@@ -17,8 +18,12 @@ async function getTemplateHtml(htmlTemplatePath) {
 }
 
 // Generating PDF
-async function generatePdf(htmlTemplatePath, data = {}, pdfFormatDetails = {}) {
-  let PDF;
+export async function generatePdf(
+  htmlTemplatePath: string,
+  data = {},
+  pdfFormatDetails: PDFOptions = {}
+) {
+  let PDF: Buffer | undefined;
   await getTemplateHtml(htmlTemplatePath).then(async (res) => {
     // Now we have the html code of our template in res object
     // you can check by logging it on console
@@ -30,7 +35,5 @@ async function generatePdf(htmlTemplatePath, data = {}, pdfFormatDetails = {}) {
     PDF = await page.pdf(pdfFormatDetails);
     await browser.close();
   });
-  return PDF;
+  return PDF!;
 }
-
-module.exports = { generatePdf };
